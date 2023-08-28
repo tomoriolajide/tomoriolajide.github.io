@@ -1,14 +1,19 @@
-const hamburgerEl = document.querySelector(".hamburger");
-const navLinks = document.querySelector(".nav-links");
-const closeEl = document.querySelector(".close");
+const hamburgerEl = document.getElementById("hamburger");
+const workEl = document.getElementById("work");
+const closeBtn = workEl.querySelector(".higher");
+const bluwey = document.querySelectorAll(".slap");
 
 hamburgerEl.addEventListener("click", function () {
-  navLinks.classList.add("show");
   hamburgerEl.style.display = "none";
-  closeEl.style.display = "block";
+  workEl.style.display = "block";
 });
-closeEl.addEventListener("click", function () {
-  navLinks.classList.remove("show");
+closeBtn.addEventListener("click", function () {
+  hamburgerEl.style.display = "block";
+  workEl.style.display = "none";
+});
 
-  closeEl.style.display = "none";
+bluwey.forEach((button) => {
+  button.addEventListener("click", function () {
+    button.classList.toggle("bordered");
+  });
 });
